@@ -50,11 +50,12 @@ ycLoadi("./script.il")
 
 ## 函数拓展
 
-> 1、下面假设有一个脚本文件在 `/home/yeungchie/skill/script.il` 路径下。</br>
-> 2、在 `/home/yuengchie/project/` 下启动 virtuoso 工具。</br>
-> 3、使用 `load("../skill/script.il")` 来加载这个脚本文件。</br>
-> 4、以下代码框示例 `script.il` 中的内容。</br>
-> 5、用 `=>` 代表加载脚本后在 CIW 中打印的内容。</br>
+假设如下场景：
+
+1. 有一个脚本文件路径为 `/home/yeungchie/skill/script.il`。
+2. 在 `/home/yuengchie/project/` 下启动 virtuoso 工具。
+3. 使用 `load("../skill/script.il")` 语句来加载这个脚本文件。
+4. 下面的演示中，代码框示例 `script.il` 中的内容，用 `=>` 来代表加载脚本后在 CIW 窗口中打印的内容。
 
 ### ycGetFileName
 
@@ -106,4 +107,12 @@ ycLoadi("./script.il")
 
 ### 注意事项
 
-上述的函数调用注意不能位于当前文本的最后一行 `; END`，否则可能会出现路径获取错误的问题，原因不详，猜测是 Skill 的 bug。
+上述的函数调用注意不能位于当前文本的最后一行 `; END`，否则可能会出现路径获取错误的问题。
+原因不详，猜测是 Skill 的 bug。
+
+> 这个现象是我的脚本文件路径位于 NFS 挂载的远程存储的时候发现的，复现率极高。
+
+```skill
+ycLoad("xxx")
+; 特意空一行
+```
