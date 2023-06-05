@@ -105,7 +105,7 @@ ycLoadi("./script.il")
 
     > => "/home/yeungchie/skill/script.il"
 
-### 注意事项
+## 注意事项
 
 上述的函数调用注意不能位于当前文本的最后一行 `; END`，否则可能会出现路径获取错误的问题。
 原因不详，猜测是 Skill 的 bug。
