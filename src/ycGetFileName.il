@@ -1,6 +1,11 @@
+;--------------------------
+; Program  : skill-loader(ycGetFileName.il)
+; Language : Cadence Skill
+; Author   : YEUNGCHIE
+;--------------------------
+
 ; 获取当前文件路径
 
-alias(__FILE__ ycGetFileName)
 procedure(ycGetFileName(\@optional fileName "g")
     let((self dir)
         self = get_filename(piport)

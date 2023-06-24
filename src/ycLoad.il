@@ -1,8 +1,10 @@
-; load 函数优化
+;--------------------------
+; Program  : skill-loader(ycLoad.il)
+; Language : Cadence Skill
+; Author   : YEUNGCHIE
+;--------------------------
 
-procedure(ycLoadi(file \@optional pwd "tg")
-    ycLoad(file pwd t)
-); ycLoadi
+; load 函数优化
 
 procedure(ycLoad(file \@optional pwd ignore "tgg")
     let((path args)

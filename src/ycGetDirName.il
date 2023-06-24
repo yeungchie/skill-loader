@@ -1,6 +1,11 @@
+;--------------------------
+; Program  : skill-loader(ycGetDirName.il)
+; Language : Cadence Skill
+; Author   : YEUNGCHIE
+;--------------------------
+
 ; 获取给定文件路径的父目录名
 
-alias(__DIR__ ycGetDirName)
 procedure(ycGetDirName(\@optional file(ycGetFileName()) rel uniq "tgg")
     let((dir)
         dir = if(pcreMatchp("^\\*.+\\*$" file)
