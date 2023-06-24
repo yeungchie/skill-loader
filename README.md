@@ -93,12 +93,12 @@ ycLoadi("./script.il")
 
     >  => "/home/yeungchie/skill/"
 
-### ycReadRelPath
+### ycRealPath
 
 + 读取相对路径，返回绝对路径。
 
     ```lisp
-    filePath = ycReadRelPath("../skill/script.il")
+    filePath = ycRealPath("../skill/script.il")
     println(filePath)
     ; END
     ```
