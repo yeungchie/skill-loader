@@ -8,13 +8,13 @@
 
 + GitHub
 
-```bash
+```shell
 git clone https://github.com/yeungchie/skill-loader.git
 ```
 
 + Gitee
 
-```bash
+```shell
 git clone https://gitee.com/yeungchie/skill-loader.git
 ```
 
@@ -22,7 +22,7 @@ git clone https://gitee.com/yeungchie/skill-loader.git
 
 在 `~/.cdsinit` 中添加：
 
-```skill
+```lisp
 load("<path_to_skill_loader>/load.il")
 ```
 
@@ -32,7 +32,7 @@ load("<path_to_skill_loader>/load.il")
 
 可正确识别以文件本身路径为参考的相对路径。
 
-```skill
+```lisp
 ycLoad("./script.il")
 ; END
 ```
@@ -41,7 +41,7 @@ ycLoad("./script.il")
 
 与 `ycLoad` 相同，不同之处在于 `ycLoadi` 忽略加载过程中遇到的错误，只打印错误信息，然后继续加载。
 
-```skill
+```lisp
 ycLoadi("./script.il")
 ; END
 ```
@@ -61,7 +61,7 @@ ycLoadi("./script.il")
 
 + 获取当前文件的路径。
 
-    ```skill
+    ```lisp
     fileName = ycGetFileName()
     println(fileName)
     ; END
@@ -73,7 +73,7 @@ ycLoadi("./script.il")
 
 + 获取文件名。
 
-    ```skill
+    ```lisp
     baseName = ycGetBaseName(fileName)
     println(baseName)
     ; END
@@ -85,7 +85,7 @@ ycLoadi("./script.il")
 
 + 获取文件父目录名。
 
-    ```skill
+    ```lisp
     dirName = ycGetDirName(fileName)
     println(dirName)
     ; END
@@ -97,7 +97,7 @@ ycLoadi("./script.il")
 
 + 读取相对路径，返回绝对路径。
 
-    ```skill
+    ```lisp
     filePath = ycReadRelPath("../skill/script.il")
     println(filePath)
     ; END
@@ -112,7 +112,7 @@ ycLoadi("./script.il")
 
 > 这个现象是我的脚本文件路径位于 NFS 挂载的远程存储的时候发现的，复现率极高。
 
-```skill
+```lisp
 ycLoad("xxx")
 ; 特意空一行
 ```
