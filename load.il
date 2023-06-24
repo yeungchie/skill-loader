@@ -12,6 +12,7 @@ let((dir)
     load(strcat(dir "src/ycRealPath.il"))
     load(strcat(dir "src/ycLoad.il"))
     load(strcat(dir "src/ycLoadi.il"))
+    load(strcat(dir "alias/load.il"))
 )
 
 ; END
