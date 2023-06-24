@@ -8,7 +8,7 @@
 
 procedure(ycLoad(file \@optional pwd ignore "tgg")
     let((path args)
-        path = ycReadRelPath(file)
+        path = ycRealPath(file)
         unless(isFile(path)
             error("ycLoad: not a valid file - %A" path)
         )
