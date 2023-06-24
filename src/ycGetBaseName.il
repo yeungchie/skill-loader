@@ -10,7 +10,7 @@ procedure(ycGetBaseName(file)
     when(pcreMatchp("^\\*.+\\*$" file)
         file = getWorking()
     )
-    file = simplifyFilename(strcat(file "/") t)
+    file = strcat(file "/")
     car(last(parseString(file "/"))) || "/"
 ); ycGetBaseName
 
