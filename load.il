@@ -2,7 +2,6 @@
 ; Program  : skill-loader
 ; Language : Cadence Skill
 ; Author   : YEUNGCHIE
-; Version  : 2023.05.28
 ;--------------------------
 
 let((dir)
@@ -12,6 +11,7 @@ let((dir)
     load(strcat(dir "src/ycGetFileName.il"))
     load(strcat(dir "src/ycReadRelPath.il"))
     load(strcat(dir "src/ycLoad.il"))
+    load(strcat(dir "src/ycLoadi.il"))
 )
 
 ; END
