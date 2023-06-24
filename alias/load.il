@@ -10,7 +10,7 @@ alias(__FILE__ ycGetFileName)
 
 ; like shell
 alias(dirname ycGetDirName)
-alias(basename ycGetFileName)
+alias(basename ycGetBaseName)
 alias(realpath ycRealPath)
 
 ; END
