@@ -11,7 +11,7 @@ procedure(ycGetFileName(\@optional fileName "g")
         self = get_filename(piport)
         when(fileName
             unless(stringp(fileName)
-                error("ycGetFileName: argument #1 should be a string - %A" fileName)
+                ycError("argument #1 should be a string or nil - %A" fileName)
             )
             dir = ycGetDirName(self)
             self = strcat(dir "/" fileName)
