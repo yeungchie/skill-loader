@@ -1,2 +1,2 @@
 *.il linguist-language=common_lisp
-*.il gitlab-language=lisp
+*.il gitlab-language=common_lisp
