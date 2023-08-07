@@ -10,7 +10,7 @@ procedure(ycRealPath(\@optional file("") "t")
     unless(pcreMatchp("^[~/]" file)
         file = ycGetFileName(file)
     )
-    simplifyFilename(file t)
+    simplifyFilenameUnique(file)
 ); ycRealPath
 
 ; END
