@@ -8,7 +8,10 @@
 
 procedure(ycLoad(file \@optional pwd ignore "tgg")
     let((path args)
-        path = strcat(ycGetDirName() file)
+        path = if(pcreMatchp("^[~/]" file)
+            file
+            strcat(ycGetDirName() "/" file)
+        )
         unless(isFile(path)
             ycError("not a valid file - %A" path)
         )
