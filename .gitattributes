@@ -1,2 +1,2 @@
-*.il gitlab-language=lisp
+*.il gitlab-language=clojure
 *.il linguist-language=lisp
