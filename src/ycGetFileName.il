@@ -13,8 +13,13 @@ procedure(ycGetFileName(\@optional fileName "g")
             unless(stringp(fileName)
                 ycError("argument #1 should be a string or nil - %A" fileName)
             )
-            dir = ycGetDirName(self)
-            self = strcat(dir "/" fileName)
+            if(pcreMatchp("^[~/]" fileName)
+            then
+                self = fileName
+            else
+                dir = ycGetDirName(self)
+                self = strcat(dir "/" fileName)
+            )
         )
         self
     )
