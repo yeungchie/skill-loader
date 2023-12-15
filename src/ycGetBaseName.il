@@ -6,7 +6,7 @@
 
 ; 获取给定文件路径的文件名
 
-procedure(ycGetBaseName(file)
+procedure(ycGetBaseName(file "t")
     when(pcreMatchp("^\\*.+\\*$" file)
         file = getWorking()
     )
