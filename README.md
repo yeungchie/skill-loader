@@ -9,13 +9,13 @@
 + GitHub
 
 ```shell
-git clone https://github.com/yeungchie/skill-loader.git
+git clone --depth 1 https://github.com/yeungchie/skill-loader.git
 ```
 
 + Gitee
 
 ```shell
-git clone https://gitee.com/yeungchie/skill-loader.git
+git clone --depth 1 https://gitee.com/yeungchie/skill-loader.git
 ```
 
 ## 加载配置
@@ -23,7 +23,7 @@ git clone https://gitee.com/yeungchie/skill-loader.git
 在 `~/.cdsinit` 中添加：
 
 ```lisp
-load("<path_to_skill_loader>/load.il")
+load("<path to skill-loader>/load.il")
 ```
 
 ## 使用方法
