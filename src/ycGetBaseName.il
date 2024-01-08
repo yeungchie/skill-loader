@@ -7,11 +7,20 @@
 ; 获取给定文件路径的文件名
 
 procedure(ycGetBaseName(file "t")
-    when(pcreMatchp("^\\*.+\\*$" file)
-        file = getWorking()
+    cond(
+        (blankstrp(file)
+            file
+        )
+        (file == "~"
+            getLogin()
+        )
+        (t
+            when(pcreMatchp("^\\*.+\\*$" file)
+                file = getWorking()
+            )
+            car(last(parseString(file "/"))) || "/"
+        )
     )
-    file = strcat(file "/")
-    car(last(parseString(file "/"))) || "/"
 ); ycGetBaseName
 
 ; END
