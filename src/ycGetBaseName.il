@@ -16,7 +16,7 @@ procedure(ycGetBaseName(file "t")
         )
         (t
             when(pcreMatchp("^\\*.+\\*$" file)
-                file = getWorking()
+                file = getWorkingDir()
             )
             car(last(parseString(file "/"))) || "/"
         )
