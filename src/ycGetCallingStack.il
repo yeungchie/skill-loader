@@ -8,7 +8,7 @@ procedure(ycGetCallingStack(\@optional level(0) "x")
     let((func stack)
         level++
         while(func = getCallingFunction(level)
-            stack = cons(func stack)
+            stack = cons(lsprintf("%A" func) stack)
             level++
         )
         cdr(stack)
