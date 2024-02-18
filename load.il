@@ -6,6 +6,7 @@
 
 let((dir)
     dir = pcreReplace(pcreCompile("[^/]+$") get_filename(piport) "" 1)
+    load(strcat(dir "alias/load.il"))
     load(strcat(dir "src/ycGetBaseName.il"))
     load(strcat(dir "src/ycGetDirName.il"))
     load(strcat(dir "src/ycGetFileName.il"))
@@ -15,7 +16,7 @@ let((dir)
     load(strcat(dir "src/ycWarn.il"))
     load(strcat(dir "src/ycMsg.il"))
     load(strcat(dir "src/ycLoadi.il"))
-    load(strcat(dir "alias/load.il"))
+    load(strcat(dir "src/ycGetCallingStack.il"))
 )
 
 ; END
