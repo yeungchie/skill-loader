@@ -17,8 +17,8 @@ procedure(ycError(format \@key caller(t) functionName \@rest vars "tggl")
         tab = ""
         prefix = ""
         when(caller
-            prefix = "└─ "
             foreach(x ycGetCallingStack(2)
+                prefix = "└─ "
                 errset(error("%s%s%s" tab prefix x) t)
                 tab = strcat(tab "   ")
             )

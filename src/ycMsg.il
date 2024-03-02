@@ -21,8 +21,8 @@ procedure(ycMsg(format \@key caller(t) tag("Message") port(poport) functionName 
         tab = ""
         prefix = ""
         when(caller
-            prefix = "└─ "
             foreach(x ycGetCallingStack(2)
+                prefix = "└─ "
                 fprintf(port "*%s* %s%s%s\n" tag tab prefix x)
                 tab = strcat(tab "   ")
             )

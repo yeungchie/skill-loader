@@ -17,8 +17,8 @@ procedure(ycWarn(format \@key caller(t) functionName \@rest vars "tggl")
         tab = ""
         prefix = ""
         when(caller
-            prefix = "└─ "
             foreach(x ycGetCallingStack(2)
+                prefix = "└─ "
                 warn("%s%s%s" tab prefix x)
                 tab = strcat(tab "   ")
             )
