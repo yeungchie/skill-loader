@@ -13,14 +13,17 @@ procedure(ycWarn(format \@key caller(t) functionName \@rest vars "tggl")
     unless(stringp(functionName)
         functionName = lsprintf("%A" functionName)
     )
-    let((tab prefix)
+    let((tab tabp prefix)
         tab = ""
         prefix = ""
         when(caller
             foreach(x ycGetCallingStack(2)
-                prefix = "└─ "
                 warn("%s%s%s" tab prefix x)
-                tab = strcat(tab "   ")
+                when(tabp
+                    tab = strcat(tab "   ")
+                )
+                tabp = t
+                prefix = "└─ "
             )
         )
         warn("%s%s%s: %s" tab prefix functionName apply('lsprintf format vars))

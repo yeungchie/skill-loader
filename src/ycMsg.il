@@ -13,7 +13,7 @@ procedure(ycMsg(format \@key caller(t) tag("Message") port(poport) functionName 
     unless(stringp(functionName)
         functionName = lsprintf("%A" functionName)
     )
-    let((str tab prefix)
+    let((str tab tabp prefix)
         str = apply('lsprintf format vars)
         unless(pcreMatchp("\n$" str)
             str = strcat(str "\n")
@@ -22,9 +22,12 @@ procedure(ycMsg(format \@key caller(t) tag("Message") port(poport) functionName 
         prefix = ""
         when(caller
             foreach(x ycGetCallingStack(2)
-                prefix = "└─ "
                 fprintf(port "*%s* %s%s%s\n" tag tab prefix x)
-                tab = strcat(tab "   ")
+                when(tabp
+                    tab = strcat(tab "   ")
+                )
+                tabp = t
+                prefix = "└─ "
             )
         )
         fprintf(port "*%s* %s%s%s: %s" tag tab prefix functionName str)
