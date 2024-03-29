@@ -6,7 +6,7 @@
 
 ; 显示 Message 附加函数名
 
-procedure(ycMsg(format \@key caller(t) tag("Message") port(poport) functionName \@rest vars "tgtpgl")
+procedure(ycMsg(format \@key caller(nil) tag("Message") port(poport) functionName \@rest vars "tgtpgl")
     unless(functionName
         functionName = getCallingFunction(1)
     )
