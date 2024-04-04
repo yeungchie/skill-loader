@@ -5,6 +5,7 @@
 ;--------------------------
 
 procedure(ycGetCallingStack(\@optional level(0) "x")
+    (getShellEnvVar("YEUNGCHIE_DISABLE_CALLER_DISPLAY") != "1") &&
     let((func stack)
         level++
         while(func = getCallingFunction(level)
