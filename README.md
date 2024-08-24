@@ -6,16 +6,8 @@
 
 ## 下载代码
 
-+ GitHub
-
-```shell
+```bash
 git clone --depth 1 https://github.com/yeungchie/skill-loader.git
-```
-
-+ Gitee
-
-```shell
-git clone --depth 1 https://gitee.com/yeungchie/skill-loader.git
 ```
 
 ## 加载配置
@@ -55,7 +47,6 @@ ycLoadi("./script.il")
 1. 有一个脚本文件路径为 `/home/yeungchie/skill/script.il`。
 2. 在 `/home/yuengchie/project/` 下启动 virtuoso 工具。
 3. 使用 `load("../skill/script.il")` 语句来加载这个脚本文件。
-4. 下面的演示中，代码框示例 `script.il` 中的内容，用 `=>` 来代表加载脚本后在 CIW 窗口中打印的内容。
 
 ### ycGetFileName
 
@@ -67,7 +58,7 @@ ycLoadi("./script.il")
     ; END
     ```
 
-    > => "/home/yeungchie/skill/script.il"
+    > "/home/yeungchie/skill/script.il"
 
 ### ycGetBaseName
 
@@ -79,7 +70,7 @@ ycLoadi("./script.il")
     ; END
     ```
 
-    > => "script.il"
+    > "script.il"
 
 ### ycGetDirName
 
@@ -91,7 +82,7 @@ ycLoadi("./script.il")
     ; END
     ```
 
-    >  => "/home/yeungchie/skill/"
+    > "/home/yeungchie/skill/"
 
 ### ycRealPath
 
@@ -103,7 +94,7 @@ ycLoadi("./script.il")
     ; END
     ```
 
-    > => "/home/yeungchie/skill/script.il"
+    > "/home/yeungchie/skill/script.il"
 
 ## 注意事项
 
