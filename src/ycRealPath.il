@@ -10,16 +10,7 @@ procedure(ycRealPath(\@optional file("") dontResolveLinks "tg")
     unless(pcreMatchp("^[~/]" file)
         file = ycGetFileName(file)
     )
-    if(dontResolveLinks
-    then
-        let((dir base)
-            dir = ycGetDirName(file)
-            base = ycGetBaseName(file)
-            strcat(simplifyFilenameUnique(dir) "/" base)
-        )
-    else
-        simplifyFilenameUnique(file)
-    )
+    simplifyFilename(file dontResolveLinks)
 ); ycRealPath
 
 ; END
