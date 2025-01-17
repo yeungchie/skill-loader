@@ -7,17 +7,18 @@
 ; 自动显示函数名的 error
 
 procedure(ycError(format \@key caller(t) functionName \@rest vars "tggl")
-    unless(functionName
-        functionName = getCallingFunction(1)
-    )
-    unless(stringp(functionName)
+    when(functionName && !stringp(functionName)
         functionName = lsprintf("%A" functionName)
     )
-    let((tab tabp prefix)
+    let((tab tabp prefix stack)
         tab = ""
         prefix = ""
         when(caller
-            foreach(x ycGetCallingStack(2)
+            stack = reverse(ycGetCallingStack(1))
+            unless(functionName
+                functionName = car(stack)
+            )
+            foreach(x reverse(cdr(stack))
                 errset(error("%s%s%s" tab prefix x) t)
                 when(tabp
                     tab = strcat(tab "   ")
@@ -25,6 +26,9 @@ procedure(ycError(format \@key caller(t) functionName \@rest vars "tggl")
                 tabp = t
                 prefix = "└─ "
             )
+        )
+        unless(functionName
+            functionName = getCallingFunction(1)
         )
         error("%s%s%s: %s" tab prefix functionName apply('lsprintf format vars))
     )
