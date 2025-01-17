@@ -4,15 +4,17 @@
 ; Author   : YEUNGCHIE
 ;--------------------------
 
-procedure(ycGetCallingStack(\@optional level(0) "x")
-    (getShellEnvVar("YEUNGCHIE_DISABLE_CALLER_DISPLAY") != "1") &&
-    let((func stack)
-        level++
-        while(func = getCallingFunction(level)
-            stack = cons(lsprintf("%A" func) stack)
-            level++
+defmacro(ycGetCallingStack (\@optional level(0) "g")
+    `when(getShellEnvVar("YEUNGCHIE_DISABLE_CALLER_DISPLAY") != "1"
+        let((_level last func stack)
+            _level = eval(,level)
+            while((func = getCallingFunction(_level)) && (func != last)
+                stack = cons(lsprintf("%A" func) stack)
+                last = func
+                _level++
+            )
+            stack
         )
-        cdr(stack)
     )
 )
 
